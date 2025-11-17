@@ -11,8 +11,8 @@ export default function App() {
         <Hero />
 
         <Section id="chi-sono" title="Chi sono">
-          <div className="grid gap-8 lg:grid-cols-3 items-start">
-            <div className="lg:col-span-2">
+          <div className="grid gap-10 md:grid-cols-12 items-start">
+            <div className="md:col-span-8">
               <p>
                 Sono un consulente finanziario indipendente con un approccio rigoroso e orientato ai risultati. Affianco famiglie, imprenditori e professionisti nella gestione del patrimonio con trasparenza e disciplina.
               </p>
@@ -20,13 +20,15 @@ export default function App() {
                 La mia missione è proteggere e far crescere il tuo capitale nel tempo, costruendo strategie personalizzate che rispettano il tuo profilo di rischio e i tuoi obiettivi.
               </p>
             </div>
-            <div className="rounded-xl border bg-blue-50 p-6">
-              <p className="font-semibold text-blue-800">Valori</p>
-              <ul className="mt-2 list-disc pl-5 text-blue-900/90">
-                <li>Indipendenza e trasparenza</li>
-                <li>Metodo e disciplina</li>
-                <li>Ascolto e relazione</li>
-              </ul>
+            <div className="md:col-span-4">
+              <div className="rounded-sm border bg-white p-6">
+                <p className="text-sm text-slate-600">Valori</p>
+                <ul className="mt-2 list-disc pl-5 text-slate-800">
+                  <li>Indipendenza e trasparenza</li>
+                  <li>Metodo e disciplina</li>
+                  <li>Ascolto e relazione</li>
+                </ul>
+              </div>
             </div>
           </div>
         </Section>
@@ -72,11 +74,12 @@ export default function App() {
 
         <Contact />
 
-        <footer className="py-10 border-t">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-slate-600">© {new Date().getFullYear()} Andrea Bornaghi. Tutti i diritti riservati.</p>
-            <a href="#home" className="text-sm font-medium text-blue-700 hover:text-blue-800">Torna su</a>
+        <footer className="bg-white">
+          <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p className="text-sm text-slate-600">© {new Date().getFullYear()} Andrea Bornaghi</p>
+            <a href="#home" className="text-sm text-slate-900 underline underline-offset-4 hover:no-underline">Torna su</a>
           </div>
+          <div className="border-t" />
         </footer>
       </main>
     </div>
