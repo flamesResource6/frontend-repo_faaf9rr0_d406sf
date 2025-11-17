@@ -2,15 +2,18 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import { Section, FeaturesGrid } from './components/Sections'
 import Contact from './components/Contact'
+import Legal from './components/Legal'
+import { useI18n } from './i18n'
 
 export default function App() {
+  const { t } = useI18n()
   return (
     <div className="min-h-screen bg-white text-slate-900">
       <Navbar />
       <main>
         <Hero />
 
-        <Section id="chi-sono" title="Chi sono">
+        <Section id="chi-sono" title={t('sections.about')}>
           <div className="grid gap-10 md:grid-cols-12 items-start">
             <div className="md:col-span-8">
               <p>
@@ -22,7 +25,7 @@ export default function App() {
             </div>
             <div className="md:col-span-4">
               <div className="rounded-sm border bg-white p-6">
-                <p className="text-sm text-slate-600">Valori</p>
+                <p className="text-sm text-slate-600">{t('sections.values')}</p>
                 <ul className="mt-2 list-disc pl-5 text-slate-800">
                   <li>Indipendenza e trasparenza</li>
                   <li>Metodo e disciplina</li>
@@ -33,7 +36,7 @@ export default function App() {
           </div>
         </Section>
 
-        <Section id="private-banking" title="Private Banking">
+        <Section id="private-banking" title={t('sections.pb')}>
           <p>
             Servizi di gestione patrimoniale su misura: architettura aperta, selezione dei migliori strumenti, controllo dei costi e governance del rischio.
           </p>
@@ -46,7 +49,7 @@ export default function App() {
           />
         </Section>
 
-        <Section id="analisi-investimenti" title="Analisi Investimenti">
+        <Section id="analisi-investimenti" title={t('sections.analysis')}>
           <p>
             Analisi indipendente delle soluzioni di investimento: performance, rischio, drawdown, correlazioni e coerenza con gli obiettivi.
           </p>
@@ -59,7 +62,7 @@ export default function App() {
           />
         </Section>
 
-        <Section id="pianificazione" title="Pianificazione finanziaria">
+        <Section id="pianificazione" title={t('sections.planning')}>
           <p>
             Pianificazione patrimoniale completa: previdenza, protezione, passaggio generazionale, fiscalità e obiettivi di vita.
           </p>
@@ -73,11 +76,12 @@ export default function App() {
         </Section>
 
         <Contact />
+        <Legal />
 
         <footer className="bg-white">
           <div className="mx-auto max-w-6xl px-4 sm:px-6 py-10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <p className="text-sm text-slate-600">© {new Date().getFullYear()} Andrea Bornaghi</p>
-            <a href="#home" className="text-sm text-slate-900 underline underline-offset-4 hover:no-underline">Torna su</a>
+            <p className="text-sm text-slate-600">© {new Date().getFullYear()} Andrea Bornaghi · <a href="#note-legali" className="underline underline-offset-4 hover:no-underline text-slate-900">{t('sections.legal')}</a></p>
+            <a href="#home" className="text-sm text-slate-900 underline underline-offset-4 hover:no-underline">{t('sections.backToTop')}</a>
           </div>
           <div className="border-t" />
         </footer>
